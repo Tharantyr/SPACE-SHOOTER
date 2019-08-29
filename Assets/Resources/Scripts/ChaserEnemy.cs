@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -61,7 +61,9 @@ public class ChaserEnemy : Enemy
         obj.transform.GetChild(2).localScale = new Vector3(0.05f, 0.05f, 1);
         obj.transform.position = GetComponent<Collider2D>().ClosestPoint(col.transform.position);
         obj.transform.rotation = transform.rotation;
-        StartCoroutine(Flash(Color.red, 0.075f)); // Flash red
+
+        if (gameObject.activeInHierarchy)
+            StartCoroutine(Flash(Color.red, 0.075f)); // Flash red
 
         lastHit = col.gameObject.tag; // Store who gave the last hit so we can update kill counter
 
