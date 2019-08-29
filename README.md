@@ -3,11 +3,11 @@
 Warning: high difficulty, probably a little unbalanced because of the short window of time to complete it
 
 Controls:
-WASD to move the ship
-Mouse movement to rotate
-Left mouse button to fire lasers
-Right mouse button to fire rockets
-Press Escape to open the pause menu
+- WASD to move the ship
+- Mouse movement to rotate
+- Left mouse button to fire lasers
+- Right mouse button to fire rockets
+- Press Escape to open the pause menu
 
 Gameplay: Survive each wave of 1 minute and buy upgrades at the shop in between. Enemies drop orbs that are used as a currency.
 
