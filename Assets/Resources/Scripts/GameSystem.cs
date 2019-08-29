@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -47,6 +47,7 @@ public class GameSystem : MonoBehaviour
     private void Start()
     {
         // Initialize music
+        musicManager.priority = 0;
         musicManager.clip = music;
         musicManager.volume = 0.1f;
         musicManager.loop = true;
@@ -86,10 +87,7 @@ public class GameSystem : MonoBehaviour
     private void Update() // Transition between different phases of the game
     {
         if (gameState == GameState.MainMenu)
-        {
-            spawned = false;
             mainMenu.SetActive(true);
-        }
 
         else if (gameState == GameState.PauseMenu)
             freezeTimer = true;
@@ -112,7 +110,9 @@ public class GameSystem : MonoBehaviour
         else if (gameState == GameState.WaveOver)
         {
             if (c == null)
+            {
                 c = StartCoroutine(WaveEnded());
+            }
         }
 
         else if (gameState == GameState.Shop)
@@ -121,18 +121,23 @@ public class GameSystem : MonoBehaviour
             c = null;
 
             if (!shop.activeInHierarchy)
+            {
+                UI.transform.Find("WaveText").gameObject.SetActive(false); // Deactivate this UI component in shop so it doesn't interfere with mouse hovering over items
                 shop.SetActive(true);
+            }
         }
 
         else if (gameState == GameState.GameOver)
         {
             if (c == null)
+            {
+                Score += 10 * Orbs;
                 c = StartCoroutine(GameOver());
+            }
         }
 
         else if (gameState == GameState.Highscores)
         {
-            spawned = false;
             c = null;
 
             if (!highscores.activeInHierarchy)
@@ -140,36 +145,6 @@ public class GameSystem : MonoBehaviour
                 highscores.SetActive(true);
             }
         }
-    }
-
-    bool spawned = false;
-
-    public void WaveHandler() // Handle logic for waves
-    {
-        if (!spawned)
-        {
-            enemySpawner.GetComponent<EnemySpawner>().SpawnWave(Wave);
-            spawned = true;
-        }
-
-        if (timer > 0)
-        {
-            if (!freezeTimer)
-                timer -= Time.deltaTime;
-        }
-        else
-        {
-            spawned = false;
-            timer = waveTime;
-
-            foreach (GameObject o in enemyList)
-                o.GetComponent<Enemy>().WaveDeath();
-
-            gameState = GameState.WaveOver;
-            StartCoroutine(WaveEnded());
-        }
-
-        timeCounter.GetComponent<Text>().text = "Wave " + waveCount + " * " + FloatToSeconds(timer);
     }
 
     public void StartACoroutine(IEnumerator c) // Used to start coroutines from objects that are about to be deactivated so the coroutine continues playing
