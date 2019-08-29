@@ -551,6 +551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1346984807}
+  shop: {fileID: 0}
   UI: {fileID: 1640620845}
   soundManager: {fileID: 637520429}
   musicManager: {fileID: 665317247}
@@ -587,6 +588,7 @@ MonoBehaviour:
   UISounds:
   - {fileID: 8300000, guid: f4c0baf7f567e1f409fe8715d38a35e7, type: 3}
   freezeTimer: 0
+  enemySpawner: {fileID: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -2256,7 +2258,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!225 &1640620850
 CanvasGroup:

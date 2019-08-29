@@ -28,6 +28,8 @@ public class PauseMenuBack : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         GameSystem.instance.enemyList = new List<GameObject>();
 
         GameSystem.instance.player.SetActive(false);
+        GameSystem.instance.enemySpawner.SetActive(false);
+        GameSystem.instance.shop.SetActive(false);
 
         CanvasGroup mainMenuCanvas = ObjectPool.instance.GetPooledObject("MainMenu").GetComponent<CanvasGroup>();
 

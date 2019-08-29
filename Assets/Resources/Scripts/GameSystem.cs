@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameSystem : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject player, shop;
     public GameObject UI;
     public AudioSource soundManager, musicManager;
     public static GameSystem instance;
@@ -18,10 +18,10 @@ public class GameSystem : MonoBehaviour
     public AudioClip music;
     public AudioClip[] PlayerSounds, EnemySounds, UISounds;
     public bool freezeTimer;
+    public GameObject enemySpawner;
 
-    GameObject enemySpawner;
     int orbCount, killCount, rocketCount, lifeCount, health, shield, score, waveCount;
-    GameObject orbCounter, killCounter, rocketCounter, lifeCounter, healthCounter, shieldCounter, scoreCounter, timeCounter, shop, highscores, mainMenu;
+    GameObject orbCounter, killCounter, rocketCounter, lifeCounter, healthCounter, shieldCounter, scoreCounter, timeCounter, highscores, mainMenu;
     float timer;
     Coroutine c;
 
