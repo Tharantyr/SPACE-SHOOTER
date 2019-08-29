@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,6 +33,7 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         itemPic = transform.GetChild(0);
         transform.GetChild(1).GetComponent<Text>().text = "Cost: " + cost;
         sold = false;
+        fade = null;
     }
 
     protected virtual void Update() // If player cannot afford item, make item invisible
