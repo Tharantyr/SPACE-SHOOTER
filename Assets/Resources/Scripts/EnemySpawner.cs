@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -17,9 +17,6 @@ public class EnemySpawner : MonoBehaviour
     {
         if (GameSystem.instance.gameState == GameSystem.GameState.GameOver)
         {
-            GameSystem.instance.soundManager.PlayOneShot(GameSystem.instance.EnemySounds[0]); // Play sound effect
-            GameSystem.instance.soundManager.PlayOneShot(GameSystem.instance.EnemySounds[9]); // Play sound effect
-
             foreach (GameObject o in GameSystem.instance.enemyList)
                 o.GetComponent<Enemy>().WaveDeath();
             GameSystem.instance.enemyList = new List<GameObject>();
