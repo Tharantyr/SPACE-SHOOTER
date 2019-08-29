@@ -12,11 +12,11 @@ Press Escape to open the pause menu
 Gameplay: Survive each wave of 1 minute and buy upgrades at the shop in between. Enemies drop orbs that are used as a currency.
 
 Enemies:
-Normal enemy - is stupid and shoots at literally anyone in sight (closest object)
-Asteroid - Fly randomly into the level. Deals big damage and hard to destroy.
-Chaser enemies - annoying little guys that will chase you and blow up when they connect
-Charger enemies - Bigger chasers that charge at you and deal devastating damage
-Laser enemies - Hide in corners to shoot lasers at you. Luckily the lasers damage all other enemies too.
+- Normal enemy - is stupid and shoots at literally anyone in sight (closest object)
+- Asteroid - Fly randomly into the level. Deals big damage and hard to destroy.
+- Chaser enemies - annoying little guys that will chase you and blow up when they connect
+- Charger enemies - Bigger chasers that charge at you and deal devastating damage
+- Laser enemies - Hide in corners to shoot lasers at you. Luckily the lasers damage all other enemies too.
 
 Most important scripts:
 
