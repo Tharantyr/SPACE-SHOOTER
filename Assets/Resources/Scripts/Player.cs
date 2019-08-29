@@ -72,10 +72,11 @@ public class Player : SpaceObject
 
         while (c.a < 1)
         {
-            c.a += 0.005f;
+            float time = Time.deltaTime * 1.5f;
+            c.a += time;
 
             if (shieldC.a < 1f)
-                shieldC.a += 0.005f;
+                shieldC.a += time;
 
             render.material.color = c;
             shieldRender.material.color = shieldC;

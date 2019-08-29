@@ -112,7 +112,7 @@ public class LaserEnemy : Enemy
         {
             if (GameSystem.instance.gameState != GameSystem.GameState.PauseMenu)
             {
-                t += 0.1f;
+                t += Time.deltaTime;
 
             RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, direction);
 

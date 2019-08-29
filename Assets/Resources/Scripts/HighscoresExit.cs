@@ -29,8 +29,8 @@ public class HighscoresExit : MonoBehaviour, IPointerClickHandler, IPointerEnter
 
         while (c.alpha > 0)
         {
-            c.alpha -= 0.01f;
-            mainMenuCanvas.alpha += 0.01f;
+            c.alpha -= Time.deltaTime;
+            mainMenuCanvas.alpha += Time.deltaTime;
             yield return null;
         }
 

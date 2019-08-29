@@ -46,7 +46,7 @@ abstract public class SpaceObject : MonoBehaviour
 
         while (c.a < 1)
         {
-            c.a += 0.005f;
+            c.a += Time.deltaTime * 1.5f;
             render.material.color = c;
             yield return null;
         }

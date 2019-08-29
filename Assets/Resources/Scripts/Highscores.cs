@@ -48,8 +48,8 @@ public class Highscores : MonoBehaviour
         {
             scoreListCanvas.alpha = 0;
             nameInputCanvas.alpha = 1; // Input score entry first
-            c.alpha += 0.01f;
-            ui.alpha -= 0.01f;
+            c.alpha += Time.deltaTime;
+            ui.alpha -= Time.deltaTime;
             yield return null;
         }
     }
@@ -61,8 +61,8 @@ public class Highscores : MonoBehaviour
 
         while (scoreList.alpha < 1)
         {
-            scoreList.alpha += 0.01f;
-            inputName.alpha -= 0.01f;
+            scoreList.alpha += Time.deltaTime;
+            inputName.alpha -= Time.deltaTime;
             yield return null;
         }
     }

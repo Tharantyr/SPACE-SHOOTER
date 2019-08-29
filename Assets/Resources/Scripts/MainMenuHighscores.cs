@@ -36,8 +36,8 @@ public class MainMenuHighscores : MonoBehaviour, IPointerClickHandler, IPointerE
             scoreListCanvas.alpha = 1; // Skip score entering and go straight to score list
             nameInputCanvas.alpha = 0;
 
-            c.alpha -= 0.01f;
-            highscoresCanvas.alpha += 0.01f;
+            c.alpha -= Time.deltaTime;
+            highscoresCanvas.alpha += Time.deltaTime;
             yield return null;
         }
 

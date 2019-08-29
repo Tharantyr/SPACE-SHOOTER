@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,10 +40,7 @@ public class Shop : MonoBehaviour
         playerBody.velocity = Vector2.zero;
 
         for (int i = 2; i < 8; i++)
-        {
-            transform.GetChild(i).GetComponent<ShopItem>().collider1.enabled = true;
-            transform.GetChild(i).GetComponent<ShopItem>().collider2.enabled = true;
-        }
+            transform.GetChild(i).GetComponent<Collider2D>().enabled = true;
     }
 
     public IEnumerator FadeShop() // Fade out shop upon exiting
@@ -53,9 +50,9 @@ public class Shop : MonoBehaviour
 
         while (shopAlpha > 0)
         {
-            shopAlpha -= 0.003f;
+            shopAlpha -= Time.deltaTime;
             GetComponent<CanvasGroup>().alpha = shopAlpha;
-            GameSystem.instance.UI.transform.Find("TopUI").GetComponent<CanvasGroup>().alpha += 0.003f;
+            GameSystem.instance.UI.transform.Find("TopUI").GetComponent<CanvasGroup>().alpha += Time.deltaTime;
             yield return null;
         }
 

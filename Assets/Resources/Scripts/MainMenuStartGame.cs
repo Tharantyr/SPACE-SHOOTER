@@ -31,8 +31,8 @@ public class MainMenuStartGame : MonoBehaviour, IPointerClickHandler, IPointerEn
 
         while (c.alpha > 0)
         {
-            c.alpha -= 0.01f;
-            uiCanvas.alpha += 0.01f;
+            c.alpha -= Time.deltaTime;
+            uiCanvas.alpha += Time.deltaTime;
             yield return null;
         }
 

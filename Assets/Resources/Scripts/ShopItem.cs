@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,8 +6,6 @@ using UnityEngine.EventSystems;
 
 public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public Collider2D collider1, collider2;
-
     protected Transform itemPic;
     protected Coroutine fade;
     protected int cost;
@@ -84,7 +82,7 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         while (distance > 0.2f)
         {
-            picCopy.position += direction;
+            picCopy.position += direction * Time.deltaTime * 500;
             distance = Vector2.Distance(picCopy.position, player.transform.position);
             Color c = image.color;
             c.a = distance / startDistance;
@@ -106,7 +104,7 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         while (c.alpha > 0.2f)
         {
-            c.alpha -= 0.01f;
+            c.alpha -= Time.deltaTime;
             yield return null;
         }
     }

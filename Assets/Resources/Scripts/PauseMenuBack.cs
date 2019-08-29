@@ -35,7 +35,7 @@ public class PauseMenuBack : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
         while (mainMenuCanvas.alpha < 1)
         {
-            mainMenuCanvas.alpha += 0.01f;
+            mainMenuCanvas.alpha += Time.deltaTime;
             yield return null;
         }
 
