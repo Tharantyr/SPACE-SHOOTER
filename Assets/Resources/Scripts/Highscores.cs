@@ -35,10 +35,6 @@ public class Highscores : MonoBehaviour
 
     public IEnumerator FadeScores() // Fade in highscores
     {
-        foreach (GameObject e in GameSystem.instance.enemyList) // Kill all surviving enemies
-            e.GetComponent<Enemy>().WaveDeath();
-        GameSystem.instance.enemyList = new List<GameObject>();
-
         CanvasGroup c = GetComponent<CanvasGroup>();
         CanvasGroup ui = GameSystem.instance.UI.GetComponent<CanvasGroup>();
         CanvasGroup scoreListCanvas = transform.Find("ScoreList").GetComponent<CanvasGroup>();

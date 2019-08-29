@@ -18,7 +18,10 @@ public class EnemySpawner : MonoBehaviour
         if (GameSystem.instance.gameState == GameSystem.GameState.GameOver)
         {
             foreach (GameObject o in GameSystem.instance.enemyList)
-                o.GetComponent<Enemy>().WaveDeath();
+            {
+                if (o.activeInHierarchy)
+                    o.GetComponent<Enemy>().WaveDeath();
+            }
 
             gameObject.SetActive(false);
         }
