@@ -471,7 +471,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnWave(int wave)
     {
-        StartCoroutine(WaitThenSpawn(listOfSpawnLists[7]));
+        StartCoroutine(WaitThenSpawn(listOfSpawnLists[wave - 1]));
     }
 
     private IEnumerator WaitThenSpawn(List<EnemySpawn> le)

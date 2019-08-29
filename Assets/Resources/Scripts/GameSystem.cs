@@ -57,7 +57,7 @@ public class GameSystem : MonoBehaviour
 
         enemySpawner = ObjectPool.instance.GetPooledObject("EnemySpawner", false); // Handles logic for spawning enemy waves
         gameState = GameState.MainMenu;
-        waveTime = 3;
+        waveTime = 60;
         mainMenu = ObjectPool.instance.GetPooledObject("MainMenu", false);
         shop = ObjectPool.instance.GetPooledObject("Shop", false);
         highscores = ObjectPool.instance.GetPooledObject("Highscores", false);
