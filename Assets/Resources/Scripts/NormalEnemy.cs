@@ -97,4 +97,10 @@ public class NormalEnemy : Enemy
             GameSystem.instance.Score += 50;
         }
     }
+
+    public override void WaveDeath()
+    {
+        GameSystem.instance.soundManager.PlayOneShot(GameSystem.instance.EnemySounds[0]); // Play sound effect
+        base.WaveDeath();
+    }
 }

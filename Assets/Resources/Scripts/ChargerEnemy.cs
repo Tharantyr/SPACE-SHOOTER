@@ -173,7 +173,13 @@ public class ChargerEnemy : Enemy
         if (lastHit == "Bullet" || lastHit == "RocketExplosion")
         {
             GameSystem.instance.Kills++;
-            GameSystem.instance.Score += 50;
+            GameSystem.instance.Score += 120;
         }
+    }
+
+    public override void WaveDeath()
+    {
+        GameSystem.instance.soundManager.PlayOneShot(GameSystem.instance.EnemySounds[0]); // Play sound effect
+        base.WaveDeath();
     }
 }

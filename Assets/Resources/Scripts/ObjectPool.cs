@@ -21,7 +21,6 @@ public class ObjectPool : MonoBehaviour // Object pooling because it's less expe
         AddObjectsToPool("Bullet", 5);
         AddObjectsToPool("Rocket", 5);
         AddObjectsToPool("NormalEnemyBullet", 10);
-        AddObjectsToPool("LaserEnemyBullet", 10);
         AddObjectsToPool("Asteroid", 5);
         AddObjectsToPool("NormalEnemy", 5);
         AddObjectsToPool("ChaserEnemy", 5);

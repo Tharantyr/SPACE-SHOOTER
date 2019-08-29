@@ -174,15 +174,6 @@ public class LaserEnemy : Enemy
         c = null;
     }
 
-    protected override void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject != bullet) // Make sure enemy doesn't die from its own bullets
-        {
-            GameSystem.instance.soundManager.PlayOneShot(GameSystem.instance.EnemySounds[Random.Range(1, 3)]); // Play sound effect
-            base.OnTriggerEnter2D(col);
-        }
-    }
-
     protected override void Death()
     {
         GameSystem.instance.soundManager.Stop();
@@ -210,7 +201,13 @@ public class LaserEnemy : Enemy
         if (lastHit == "Bullet" || lastHit == "RocketExplosion")
         {
             GameSystem.instance.Kills++;
-            GameSystem.instance.Score += 50;
+            GameSystem.instance.Score += 150;
         }
+    }
+
+    public override void WaveDeath()
+    {
+        GameSystem.instance.soundManager.PlayOneShot(GameSystem.instance.EnemySounds[0]); // Play sound effect
+        base.WaveDeath();
     }
 }

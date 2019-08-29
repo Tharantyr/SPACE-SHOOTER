@@ -144,4 +144,10 @@ public class Asteroid : Enemy
             GameSystem.instance.Score += 80;
         }
     }
+
+    public override void WaveDeath()
+    {
+        GameSystem.instance.soundManager.PlayOneShot(GameSystem.instance.EnemySounds[9]); // Play sound effect
+        base.WaveDeath();
+    }
 }
