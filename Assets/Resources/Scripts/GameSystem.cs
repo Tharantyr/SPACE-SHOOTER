@@ -111,6 +111,7 @@ public class GameSystem : MonoBehaviour
         {
             if (c == null)
             {
+                timer = waveTime;
                 c = StartCoroutine(WaveEnded());
             }
         }

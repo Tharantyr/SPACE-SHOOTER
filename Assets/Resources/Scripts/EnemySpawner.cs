@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
         {
             foreach (GameObject o in GameSystem.instance.enemyList)
                 o.GetComponent<Enemy>().WaveDeath();
-            GameSystem.instance.enemyList = new List<GameObject>();
+
             gameObject.SetActive(false);
         }
 
@@ -31,15 +31,12 @@ public class EnemySpawner : MonoBehaviour
         else
         {
             GameSystem.instance.player.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
-            GameSystem.instance.soundManager.PlayOneShot(GameSystem.instance.EnemySounds[0]); // Play sound effect
-            GameSystem.instance.soundManager.PlayOneShot(GameSystem.instance.EnemySounds[9]); // Play sound effect
-
-            GameSystem.instance.Timer = GameSystem.instance.waveTime; // Reset time
 
             foreach (GameObject o in GameSystem.instance.enemyList) // Destroy remaining enemies
-                o.GetComponent<Enemy>().WaveDeath();
-            GameSystem.instance.enemyList = new List<GameObject>();
-
+            {
+                if (o.activeInHierarchy)
+                    o.GetComponent<Enemy>().WaveDeath();
+            }
             GameSystem.instance.gameState = GameSystem.GameState.WaveOver; // Transition to WaveOver
             gameObject.SetActive(false);
         }

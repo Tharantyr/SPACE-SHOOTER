@@ -143,13 +143,16 @@ abstract public class SpaceObject : MonoBehaviour
 
     protected virtual void Death() // Stuff that happens when this object is destroyed
     {
-        GameObject obj = ObjectPool.instance.GetPooledObject(explosion); // Spawn explosion
-        obj.transform.localScale = explosionSizeVec;
-        obj.transform.GetChild(0).localScale = explosionSizeVec;
-        obj.transform.GetChild(1).localScale = explosionSizeVec;
-        obj.transform.GetChild(2).localScale = explosionSizeVec;
-        obj.transform.position = transform.position;
-        obj.transform.rotation = transform.rotation;
+        if (render.material.color.a > 0.75f)
+        {
+            GameObject obj = ObjectPool.instance.GetPooledObject(explosion); // Spawn explosion
+            obj.transform.localScale = explosionSizeVec;
+            obj.transform.GetChild(0).localScale = explosionSizeVec;
+            obj.transform.GetChild(1).localScale = explosionSizeVec;
+            obj.transform.GetChild(2).localScale = explosionSizeVec;
+            obj.transform.position = transform.position;
+            obj.transform.rotation = transform.rotation;
+        }
         gameObject.SetActive(false);
     }
 
