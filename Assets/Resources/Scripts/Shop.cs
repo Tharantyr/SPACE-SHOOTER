@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -48,6 +48,7 @@ public class Shop : MonoBehaviour
 
     public IEnumerator FadeShop() // Fade out shop upon exiting
     {
+        GameSystem.instance.UI.transform.Find("WaveText").gameObject.SetActive(true);
         float shopAlpha = GetComponent<CanvasGroup>().alpha;
 
         while (shopAlpha > 0)
