@@ -5,7 +5,7 @@ Warning: high difficulty, probably a little unbalanced because of the short wind
 Controls:
 - WASD to move the ship
 - Mouse movement to rotate
-- Left mouse button to fire lasers
+- Left mouse button to fire bullets
 - Right mouse button to fire rockets
 - Press Escape to open the pause menu
 
